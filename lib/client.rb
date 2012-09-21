@@ -24,5 +24,8 @@ module Moodstocks
       system("curl --digest -u #{@key}:#{@secret} '#{@endpoint}/ref/#{id}' -X DELETE")
     end
 
+    def offline(id)
+      system("curl --digest -u #{@key}:#{@secret} '#{@endpoint}/ref/#{id}/offline' -X POST")
+    end
   end
 end
